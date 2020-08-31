@@ -76,22 +76,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Win 10 Git 设置代理</title>
-    <url>/2019/03/17/Win-10-Git-%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86/</url>
-    <content><![CDATA[<h1 id="git-设置-http-amp-https-代理"><a href="#git-设置-http-amp-https-代理" class="headerlink" title="git 设置 http &amp; https 代理"></a>git 设置 http &amp; https 代理</h1><p>在 git bash 中设置如下</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 设置如下</span><br><span class="line">git config --global http.proxy &#39;socks5:&#x2F;&#x2F;127.0.0.1:1080&#39;</span><br><span class="line">git config --global https.proxy &#39;socks5:&#x2F;&#x2F;127.0.0.1:1080&#39;</span><br><span class="line"></span><br><span class="line"># git clone 测试加速即为成功</span><br></pre></td></tr></table></figure>
-
-<h1 id="git-ssh-代理设置暂未找到"><a href="#git-ssh-代理设置暂未找到" class="headerlink" title="git ssh 代理设置暂未找到"></a>git ssh 代理设置暂未找到</h1><p>待补充 - _ - ……</p>
-]]></content>
-      <categories>
-        <category>Windows 10</category>
-      </categories>
-      <tags>
-        <tag>Git</tag>
-        <tag>Proxy</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Mariadb/Mysql 解决权限问题</title>
     <url>/2018/09/25/Mariadb-Mysql-%E8%A7%A3%E5%86%B3%E6%9D%83%E9%99%90%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<h1 id="ubuntu-安装-mysql-mariadb-后权限问题设置"><a href="#ubuntu-安装-mysql-mariadb-后权限问题设置" class="headerlink" title="ubuntu 安装 mysql/mariadb 后权限问题设置"></a>ubuntu 安装 mysql/mariadb 后权限问题设置</h1><p><strong>出现的问题 :</strong><code>ERROR 1698 (28000): Access denied for user &#39;root&#39;@&#39;localhost&#39;</code><br> 原因：mysql 权限未设置<br> 解决办法：</p>
@@ -107,6 +91,22 @@
       </categories>
       <tags>
         <tag>Mariadb/Mysql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Win 10 Git 设置代理</title>
+    <url>/2019/03/17/Win-10-Git-%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86/</url>
+    <content><![CDATA[<h1 id="git-设置-http-amp-https-代理"><a href="#git-设置-http-amp-https-代理" class="headerlink" title="git 设置 http &amp; https 代理"></a>git 设置 http &amp; https 代理</h1><p>在 git bash 中设置如下</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 设置如下</span><br><span class="line">git config --global http.proxy &#39;socks5:&#x2F;&#x2F;127.0.0.1:1080&#39;</span><br><span class="line">git config --global https.proxy &#39;socks5:&#x2F;&#x2F;127.0.0.1:1080&#39;</span><br><span class="line"></span><br><span class="line"># git clone 测试加速即为成功</span><br></pre></td></tr></table></figure>
+
+<h1 id="git-ssh-代理设置暂未找到"><a href="#git-ssh-代理设置暂未找到" class="headerlink" title="git ssh 代理设置暂未找到"></a>git ssh 代理设置暂未找到</h1><p>待补充 - _ - ……</p>
+]]></content>
+      <categories>
+        <category>Windows 10</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+        <tag>Proxy</tag>
       </tags>
   </entry>
   <entry>
@@ -608,18 +608,6 @@
       </tags>
   </entry>
   <entry>
-    <title>懒，迷茫</title>
-    <url>/2018/09/12/%E6%87%92/</url>
-    <content><![CDATA[<p>我发现我现在是真的懒+迷茫，对未来感到害怕！</p>
-]]></content>
-      <categories>
-        <category>me</category>
-      </categories>
-      <tags>
-        <tag>me</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>博客第一篇</title>
     <url>/2018/07/18/%E5%8D%9A%E5%AE%A2%E7%AC%AC%E4%B8%80%E7%AF%87/</url>
     <content><![CDATA[<p>博客开开关关，最终选择github托管，以后好好写博客！</p>
@@ -629,6 +617,18 @@
       </categories>
       <tags>
         <tag>blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>懒，迷茫</title>
+    <url>/2018/09/12/%E6%87%92/</url>
+    <content><![CDATA[<p>我发现我现在是真的懒+迷茫，对未来感到害怕！</p>
+]]></content>
+      <categories>
+        <category>me</category>
+      </categories>
+      <tags>
+        <tag>me</tag>
       </tags>
   </entry>
   <entry>
