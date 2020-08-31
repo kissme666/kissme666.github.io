@@ -1,0 +1,661 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Linux下 通配符、元字符和转义字符区别</title>
+    <url>/2019/08/11/Linux%E4%B8%8B-%E9%80%9A%E9%85%8D%E7%AC%A6%E3%80%81%E5%85%83%E5%AD%97%E7%AC%A6%E5%92%8C%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6%E5%8C%BA%E5%88%AB/</url>
+    <content><![CDATA[<h1 id="通配符（wildcard）"><a href="#通配符（wildcard）" class="headerlink" title="通配符（wildcard）"></a>通配符（wildcard）</h1><ul>
+<li>什么是通配符？<br>只能在shell环境中使用的特殊的字符，一般作用于参数部分</li>
+</ul>
+<p>具体字符（来源于鸟哥的私房菜第四版）</p>
+<p><img src="https://img.6exe.xyz/uploads/big/b12e70697709accf6bc83617dcd3849d.png" alt="image"></p>
+<a id="more"></a>
+
+<p>具体应用：<br><img src="https://img.6exe.xyz/uploads/big/26a88d4f4c90fb3b73fda7b055e20bb9.png" alt="image"></p>
+<h1 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h1><ul>
+<li>什么是元字符？<br>bash 环境中一种特殊的符号</li>
+</ul>
+<p><img src="https://img.6exe.xyz/uploads/big/be1a72a43e475cae229aeb2f6093117f.png" alt="image"><br><img src="https://img.6exe.xyz/uploads/big/1a3679e1309ea605520d427a0eb19b5c.png" alt="image"></p>
+<h1 id="Linux-中的转移字符"><a href="#Linux-中的转移字符" class="headerlink" title="Linux 中的转移字符"></a>Linux 中的转移字符</h1><p>我理解的转移字符，就是把特殊符号所代表的内容显现出来，比如$(ls)那么它所代表的符号就是显示当前路径下所有文件和目录。  </p>
+<ul>
+<li>在Linux 中主要有四种转移字符</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>转义字符</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>``</td>
+<td>硬转义，保留原有字符含义，不进行转义</td>
+</tr>
+<tr>
+<td>“ “</td>
+<td>软转移，对其中有的特殊字符转义出其真实内容</td>
+</tr>
+<tr>
+<td>$()</td>
+<td>把命令执行后的结果返回出来</td>
+</tr>
+<tr>
+<td>\</td>
+<td>显示原本特殊字符</td>
+</tr>
+</tbody></table>
+<hr>
+<p>参考内容：<br><a href="https://www.linuxidc.com/Linux/2017-08/146463.htm">https://www.linuxidc.com/Linux/2017-08/146463.htm</a><br><a href="https://www.cnblogs.com/chengmo/archive/2010/10/17/1853344.html">https://www.cnblogs.com/chengmo/archive/2010/10/17/1853344.html</a>  </p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>shell 编程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux双系统删除</title>
+    <url>/2018/09/10/Linux%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%88%A0%E9%99%A4/</url>
+    <content><![CDATA[<h1 id="Linux-双系统的删除其中一个系统"><a href="#Linux-双系统的删除其中一个系统" class="headerlink" title="Linux 双系统的删除其中一个系统"></a>Linux 双系统的删除其中一个系统</h1><hr>
+<h2 id="删除Manajro的grub引导"><a href="#删除Manajro的grub引导" class="headerlink" title="删除Manajro的grub引导"></a>删除Manajro的grub引导</h2><p>网上的教程杂乱，很多还是几年前的教程，本文根据我的实践来删除双系统中Linux</p>
+<p>工具：DiskGenius</p>
+<p><img src="https://img.6exe.xyz/uploads/big/54f13582ce251cd7bf3cac4c1338c316.png"></p>
+<p><img src="https://img.6exe.xyz/uploads/big/60c4f0f0a9b91dd1cf2b67b08c0cf52f.png"></p>
+<hr>
+<h2 id="删除-双系统中Linux-分区"><a href="#删除-双系统中Linux-分区" class="headerlink" title="删除 双系统中Linux 分区"></a>删除 双系统中Linux 分区</h2><p><img src="https://img.6exe.xyz/uploads/big/6aa264799acdbed04ca6c8e22110a84a.png"></p>
+<hr>
+<p><strong>删除之后可能存在原有引导存在快速安装的界面，但是不影响重装Linux window10的引导也不受影响</strong></p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>Arch Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Arch</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Win 10 Git 设置代理</title>
+    <url>/2019/03/17/Win-10-Git-%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86/</url>
+    <content><![CDATA[<h1 id="git-设置-http-amp-https-代理"><a href="#git-设置-http-amp-https-代理" class="headerlink" title="git 设置 http &amp; https 代理"></a>git 设置 http &amp; https 代理</h1><p>在 git bash 中设置如下</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 设置如下</span><br><span class="line">git config --global http.proxy &#39;socks5:&#x2F;&#x2F;127.0.0.1:1080&#39;</span><br><span class="line">git config --global https.proxy &#39;socks5:&#x2F;&#x2F;127.0.0.1:1080&#39;</span><br><span class="line"></span><br><span class="line"># git clone 测试加速即为成功</span><br></pre></td></tr></table></figure>
+
+<h1 id="git-ssh-代理设置暂未找到"><a href="#git-ssh-代理设置暂未找到" class="headerlink" title="git ssh 代理设置暂未找到"></a>git ssh 代理设置暂未找到</h1><p>待补充 - _ - ……</p>
+]]></content>
+      <categories>
+        <category>Windows 10</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+        <tag>Proxy</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Mariadb/Mysql 解决权限问题</title>
+    <url>/2018/09/25/Mariadb-Mysql-%E8%A7%A3%E5%86%B3%E6%9D%83%E9%99%90%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h1 id="ubuntu-安装-mysql-mariadb-后权限问题设置"><a href="#ubuntu-安装-mysql-mariadb-后权限问题设置" class="headerlink" title="ubuntu 安装 mysql/mariadb 后权限问题设置"></a>ubuntu 安装 mysql/mariadb 后权限问题设置</h1><p><strong>出现的问题 :</strong><code>ERROR 1698 (28000): Access denied for user &#39;root&#39;@&#39;localhost&#39;</code><br> 原因：mysql 权限未设置<br> 解决办法：</p>
+<a id="more"></a>
+
+ <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">sudo mysql -u root -p <span class="comment"># 登陆</span></span><br><span class="line"><span class="keyword">use</span> mysql; </span><br><span class="line"><span class="keyword">update</span> <span class="keyword">user</span> <span class="keyword">set</span> <span class="keyword">plugin</span>=<span class="string">&#x27; &#x27;</span> <span class="keyword">where</span> <span class="keyword">User</span>=<span class="string">&#x27;root&#x27;</span>;</span><br><span class="line"><span class="keyword">flush</span> <span class="keyword">privileges</span>;</span><br><span class="line">sudo systemctl restart mysql</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><a href="https://www.youtube.com/watch?v=p08xghuzBwc">本文参考了youtubeup主的视频</a></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>db</category>
+      </categories>
+      <tags>
+        <tag>Mariadb/Mysql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo blog 迁移笔记</title>
+    <url>/2019/01/12/hexo-blog-%E8%BF%81%E7%A7%BB%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h1 id="hexo-安装"><a href="#hexo-安装" class="headerlink" title="hexo 安装"></a>hexo 安装</h1><p>正常安装hexo</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h1 id="hexo-迁移"><a href="#hexo-迁移" class="headerlink" title="hexo 迁移"></a>hexo 迁移</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">将下面的文件或文件夹复制到新的博客目录下进行替换</span><br><span class="line"> _config.yml</span><br><span class="line"> source&#x2F;</span><br><span class="line"> themes&#x2F;</span><br></pre></td></tr></table></figure>
+<h1 id="后续工作"><a href="#后续工作" class="headerlink" title="后续工作"></a>后续工作</h1><p>删除自带helloworld 文章</p>
+<hr>
+<p>常见问题:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># git 模块未安装 hexo d 报错</span></span><br><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><a href="https://blog.csdn.net/littlehaes/article/details/81503455">参考链接</a></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>http.server 临时下载小工具</title>
+    <url>/2019/01/25/http-server-%E4%B8%B4%E6%97%B6%E4%B8%8B%E8%BD%BD%E5%B0%8F%E5%B7%A5%E5%85%B7/</url>
+    <content><![CDATA[<h1 id="一个在vps-临时启用-httpserver-的的小工具"><a href="#一个在vps-临时启用-httpserver-的的小工具" class="headerlink" title="一个在vps 临时启用 httpserver 的的小工具"></a>一个在vps 临时启用 httpserver 的的小工具</h1><ul>
+<li>python3<br><a href="https://pypi.org/project/httpserver/#description">httpserver</a></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 首先测试 python3 是否安装</span></span><br><span class="line">python3</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 httpserver</span></span><br><span class="line">sudo pip3 install httpserver</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启用 httpserver 下载，会把当前目录下的文件列为可下载文件</span></span><br><span class="line">python3 -m http.server port --bind your_vps_ip</span><br><span class="line">python3 -m http.server <span class="number">80</span> --bind <span class="number">192.168</span><span class="number">.0</span><span class="number">.1</span></span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>  
+
+<ul>
+<li>python2 </li>
+</ul>
+<p><a href="https://pypi.org/project/simple-server/">SimpleHTTPServe</a><br>在 <code>python2</code> 中httpserver 为 SimpleHTTPServer</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">python -m SimpleHTTPSerer port</span><br><span class="line">python3 -m SimpleHTTPSerer <span class="number">80</span> </span><br></pre></td></tr></table></figure>
+
+<hr>
+<blockquote>
+<p>参考网站<br><a href="https://stackoverflow.com/questions/7943751/what-is-the-python-3-equivalent-of-python-m-simplehttpserver">stackoverflow</a><br><a href="https://pypi.org/project/httpserver/#description">pypi-httpserver</a></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>kali2 安装docker</title>
+    <url>/2018/10/19/kali2-%E5%AE%89%E8%A3%85docker/</url>
+    <content><![CDATA[<h1 id="在kali2-上安装docker"><a href="#在kali2-上安装docker" class="headerlink" title="在kali2 上安装docker"></a>在kali2 上安装docker</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">curl -fsSL https://mirrors.ustc.edu.cn/docker-ce/linux/debian/gpg | sudo apt-key add -</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;deb https://mirrors.ustc.edu.cn/docker-ce/linux/debian stretch stable&#x27;</span> &gt; /etc/apt/sources.list.d/docker.list</span><br><span class="line"></span><br><span class="line"><span class="comment"># 刷新缓存</span></span><br><span class="line"></span><br><span class="line">apt-get update </span><br><span class="line"></span><br><span class="line">apt-get install docker-ce</span><br><span class="line"></span><br><span class="line">usermod -aG docker <span class="variable">$user</span></span><br><span class="line"></span><br><span class="line">systemctl restart docker</span><br><span class="line"></span><br><span class="line">docker info</span><br><span class="line"></span><br><span class="line"><span class="comment"># 国内用户换源</span></span><br><span class="line"></span><br><span class="line">vim /etc/docker/daemon.json</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;registry-mirrors&quot;</span>: [<span class="string">&quot;https://docker.mirrors.ustc.edu.cn/&quot;</span>]</span><br><span class="line">&#125;</span><br><span class="line">systemctl restart docker</span><br><span class="line">docker info 看源是否更换</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<hr>
+<h2 id="安装-docker-compose"><a href="#安装-docker-compose" class="headerlink" title="安装 docker-compose"></a>安装 docker-compose</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># pip3 安装</span></span><br><span class="line"></span><br><span class="line">pip3 install docker-compose</span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试</span></span><br><span class="line"></span><br><span class="line">docker-compose --version</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p><a href="%3Chttps://medium.com/@calypso_bronte/installing-docker-in-kali-linux-2018-1-ef3a8ce3648">参考文档</a>&gt;<br><a href="%3Chttp://mirrors.ustc.edu.cn/help/docker-ce.html">ustc for docker </a>&gt;<br><a href="%3Chttps://docs.docker.com/install/linux/docker-ce/debian/#install-using-the-convenience-script">官方文档</a>&gt;<br><a href="http://mirrors.ustc.edu.cn/help/dockerhub.html">dockerhub 国内源</a></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>kali</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
+        <tag>kali</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>pip3 安装及配置</title>
+    <url>/2018/10/19/pip3-%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<h1 id="安装以及配置"><a href="#安装以及配置" class="headerlink" title="安装以及配置"></a>安装以及配置</h1><a id="more"></a>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get install python3-pip</span><br></pre></td></tr></table></figure>
+<h2 id="官方doc"><a href="#官方doc" class="headerlink" title="官方doc"></a>官方doc</h2><p><a href="https://pip.pypa.io/">pip-pypa</a></p>
+<h2 id="中文配置doc"><a href="#中文配置doc" class="headerlink" title="中文配置doc"></a>中文配置doc</h2><p><a href="http://mirrors.ustc.edu.cn/help/pypi.html">ustc pip 配置源</a></p>
+<h2 id="unix-环境配置"><a href="#unix-环境配置" class="headerlink" title="unix 环境配置"></a>unix 环境配置</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Unix 环境: $HOME/.config/pip/pip.conf</span></span><br><span class="line">mkdir .config/pip</span><br><span class="line"><span class="built_in">cd</span> .config/pip</span><br><span class="line">vim ~/.config/pip/pip.conf</span><br><span class="line"><span class="comment"># 添加</span></span><br><span class="line">[global]</span><br><span class="line">index-url = https://mirrors.ustc.edu.cn/pypi/web/simple</span><br><span class="line">format = columns</span><br><span class="line"><span class="comment"># 测试安装 django</span></span><br><span class="line">pip3 install django </span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>pip</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>python 虚拟包管理工具</title>
+    <url>/2019/07/08/python-%E8%99%9A%E6%8B%9F%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/</url>
+    <content><![CDATA[<h1 id="为什么需要虚拟包管理工具？"><a href="#为什么需要虚拟包管理工具？" class="headerlink" title="为什么需要虚拟包管理工具？"></a>为什么需要虚拟包管理工具？</h1><blockquote>
+<p>一般来说，在python实际的开发中，我们有时候需要不同版本的某个库，在这种情况下，python的虚拟包管理工具就诞生了！（当然我是为了保持系统的全局环境的干净）😀</p>
+</blockquote>
+<a id="more"></a>
+
+<h1 id="pyenv-和-pyvenv-和-virtualenv-傻傻分不清楚-😅"><a href="#pyenv-和-pyvenv-和-virtualenv-傻傻分不清楚-😅" class="headerlink" title="pyenv 和 pyvenv 和 virtualenv 傻傻分不清楚 😅"></a>pyenv 和 pyvenv 和 virtualenv 傻傻分不清楚 😅</h1><blockquote>
+<p>pyenv 是第三方的一个虚拟包管理</p>
+</blockquote>
+<blockquote>
+<p>pyvenv 是在python3.3 版本之后才出现的一种虚拟包管理，也就是说python2和python3.3 之前的不能用</p>
+</blockquote>
+<blockquote>
+<p>virtualenv 是目前流行的虚拟环境配置工具，支持py2和py3</p>
+</blockquote>
+<p><a href="https://blog.zengrong.net/post/2167.html">详细的区别点我</a></p>
+<h1 id="pyvenv-的使用和-virtualenv的使用"><a href="#pyvenv-的使用和-virtualenv的使用" class="headerlink" title="pyvenv 的使用和 virtualenv的使用"></a>pyvenv 的使用和 virtualenv的使用</h1><h2 id="pyvenv"><a href="#pyvenv" class="headerlink" title="pyvenv"></a>pyvenv</h2><blockquote>
+<p>pyvenv 会继承全局环境中python的版本，但是默认不会继承全局中的包</p>
+</blockquote>
+<ul>
+<li>第一种方式是参考<a href="https://docs.python.org/zh-cn/3/tutorial/venv.html">python文档</a>的方式</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 这里的python只的是py3</span></span><br><span class="line">python -m venv myenv(你要创建的虚拟环境的文件夹名)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 只限于linux</span></span><br><span class="line">pyvenv myenv</span><br><span class="line"></span><br><span class="line"><span class="comment"># cd 到 myenv</span></span><br><span class="line"><span class="built_in">cd</span> myenv</span><br><span class="line"></span><br><span class="line"><span class="comment"># 激活虚拟环境 win下</span></span><br><span class="line">.\Scripts\activate.bat</span><br><span class="line"></span><br><span class="line"><span class="comment"># 激活虚拟环境 linux下</span></span><br><span class="line"><span class="built_in">source</span> ./bin/activate</span><br><span class="line"></span><br><span class="line"><span class="comment"># 当在命令行下路径名前出现myenv的时候，表明现在处于虚拟环境下</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 退出虚拟环境</span></span><br><span class="line"><span class="comment"># win</span></span><br><span class="line">.\Scripts\deactivate.bat</span><br><span class="line"></span><br><span class="line"><span class="comment"># linux</span></span><br><span class="line">deactivate</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>注意，在win下，一定要在cmd的环境中使用win命令，git bash 和 powershell 都有问题</strong></p>
+<h2 id="virtualenv"><a href="#virtualenv" class="headerlink" title="virtualenv"></a>virtualenv</h2><blockquote>
+<p>virtualenv 默认会继承全局中的python版本和所有包</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># virtualenv 安装</span></span><br><span class="line">pip install virtualenv</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建名为 venv的不继承全局包的虚拟环境</span></span><br><span class="line">virtualenv --no-site-packages venv</span><br><span class="line"></span><br><span class="line"><span class="comment"># 激活虚拟环境 </span></span><br><span class="line"><span class="built_in">source</span> ./bin/activate <span class="comment"># linux</span></span><br><span class="line"></span><br><span class="line">.\Scripts\activate.bat <span class="comment"># win</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 退出虚拟环境</span></span><br><span class="line">deactivate <span class="comment"># linux</span></span><br><span class="line"></span><br><span class="line">.\Scripts\deactivate.bat <span class="comment"># win</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>pip</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>vim之基础</title>
+    <url>/2019/01/15/vim%E4%B9%8B%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h1 id="vim-基础"><a href="#vim-基础" class="headerlink" title="vim 基础"></a>vim 基础</h1><p>vim 分为 </p>
+<ul>
+<li>一般指令模式 (command mode)<br>vim test.txt 刚刚打开时候为这个模式</li>
+<li>插入模式 (insert mode)<br>当按下 i/o/a 等等时，为插入模式</li>
+<li>命令行命令模式 (command-line mode)<br>按下 : ? / 等进入command-line mode 模式</li>
+</ul>
+<hr>
+<a id="more"></a>
+
+<h1 id="command-mode"><a href="#command-mode" class="headerlink" title="command  mode"></a>command  mode</h1><p><strong>主要记录快捷键</strong><br>第一部份：一般指令模式可用的按钮说明，光标移动、复制贴上、搜寻取代等</p>
+<table>
+<thead>
+<tr>
+<th>移动光标的方法</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>h    或    向左方向键（←）</td>
+<td>光标向左移动一个字符</td>
+</tr>
+<tr>
+<td>j    或    向下方向键（↓）</td>
+<td>光标向下移动一个字符</td>
+</tr>
+<tr>
+<td>k    或    向上方向键（↑）</td>
+<td>光标向上移动一个字符</td>
+</tr>
+<tr>
+<td>l    或    向右方向键（→）</td>
+<td>光标向右移动一个字符</td>
+</tr>
+<tr>
+<td>0    或功能键[Home]</td>
+<td>这是数字“0”：移动到这一列的最前面字符处 （常用）</td>
+</tr>
+<tr>
+<td>$    或功能键[End]</td>
+<td>移动到这一列的最后面字符处（常用）</td>
+</tr>
+<tr>
+<td>G</td>
+<td>移动到这个文件的最后一列（常用）</td>
+</tr>
+<tr>
+<td>gg</td>
+<td>移动到这个文件的第一列，相当于1G啊！（常用）</td>
+</tr>
+<tr>
+<td>n<Enter></td>
+<td>n为数字。光标向下移动n列（常用）</td>
+</tr>
+<tr>
+<td>nG</td>
+<td>n为数字。移动到这个文件的第n列。例如20G则会移动到这个文件的第20列（可配合 :set    nu）</td>
+</tr>
+<tr>
+<td>搜寻与取代</td>
+<td></td>
+</tr>
+<tr>
+<td>/word</td>
+<td>向光标之下寻找一个名称为word的字串。例如要在文件内搜寻vbird这个字串，就输入 /vbird    即可！（常用）</td>
+</tr>
+<tr>
+<td>?word</td>
+<td>向光标之上寻找一个字串名称为word的字 串。</td>
+</tr>
+<tr>
+<td>n</td>
+<td>这个n是英文按键。代表“<u>重复前一个搜 寻的动作</u>”。举例来说，    如果刚刚我们执 行/vbird    去向下搜寻vbird这个字串,则按下 n    后，会向下继续搜寻下一个名称为    vbird    的 字串。如果是执行    ?vbird    的话，那么按下n 则会向上继续搜寻名称为bird的字串！</td>
+</tr>
+<tr>
+<td>N</td>
+<td>这个N是英文按键。与n刚好相反，为“反 向”进行前一个搜寻动作。例如/vbird后，按下N则表示“向上”搜寻vbird    。</td>
+</tr>
+<tr>
+<td>:n1,n2s/word1/word2/g</td>
+<td>n1    与    n2    为数字。在第    n1    与    n2    列之间寻找 word1    这个字串，并将该字串取代为    word2 ！举例来说，在    100    到    200    列之间搜寻    vbird 并取代为    VBIRD 则：“:100,200s/vbird/VBIRD/g”。（常用）</td>
+</tr>
+<tr>
+<td>:1,$s/word1/word2/g</td>
+<td>从第一列到最后一列寻找    word1    字串，并将 该字串取代为    word2    ！（常用）</td>
+</tr>
+<tr>
+<td>:1,$s/word1/word2/gc</td>
+<td>从第一列到最后一列寻找    word1    字串，并将 该字串取代为    word2    ！且在取代前显示提示 字符给使用者确认    （confirm）    是否需要取 代！（常用）</td>
+</tr>
+</tbody></table>
+<hr>
+<table>
+<thead>
+<tr>
+<th>删除、复制与贴上</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>x,    X</td>
+<td>在一列字当中，x    为向后删除一个字符    （相 当于    [del]    按键），    X    为向前删除一个字符 （相当于    [baackspace]    亦即是倒退键）    （常 用）</td>
+</tr>
+<tr>
+<td>dd</td>
+<td>删除光标所在的那一整列（常用）</td>
+</tr>
+<tr>
+<td>ndd</td>
+<td>n    为数字。删除光标所在的向下    n    列，例如 20dd    则是删除    20    列    （常用）</td>
+</tr>
+<tr>
+<td>yy</td>
+<td>复制光标所在的那一列（常用）</td>
+</tr>
+<tr>
+<td>nyy</td>
+<td>n    为数字。复制光标所在的向下    n    列，例如 20yy    则是复制    20    列（常用）</td>
+</tr>
+<tr>
+<td>p,    P</td>
+<td>p    为将已复制的数据在光标下一列贴上，P    则 为贴在光标上一列！    举例来说，我目前光标 在第    20    列，且已经复制了    10    列数据。则按 下    p    后，    那    10    列数据会贴在原本的    20    列之 后，亦即由    21    列开始贴。但如果是按下    P 呢？    那么原本的第    20    列会被推到变成    30 列。    （常用）</td>
+</tr>
+<tr>
+<td>u</td>
+<td>复原前一个动作。（常用）</td>
+</tr>
+<tr>
+<td>.</td>
+<td>不要怀疑！这就是小数点！意思是重复前一 个动作的意思。    如果你想要重复删除、重复 贴上等等动作，按下小数点“.”就好了！    （常 用）</td>
+</tr>
+</tbody></table>
+<hr>
+<p>一般指令模式切换到编辑模式的可用的按钮说明</p>
+<h1 id="insert-mode"><a href="#insert-mode" class="headerlink" title="insert mode"></a>insert mode</h1><table>
+<thead>
+<tr>
+<th>进入插入或取代的编辑模式</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>i,    I</td>
+<td>进入插入模式（Insert    mode）：i 为“从目前光标所在处插入”，    I 为“在目前所在列的第一个非空白 字符处开始插入”。    （常用）</td>
+</tr>
+<tr>
+<td>a,    A</td>
+<td>进入插入模式（Insert    mode）：a 为“从目前光标所在的下一个字符 处开始插入”，    A    为“从光标所在列 的最后一个字符处开始插入”。 （常用）</td>
+</tr>
+<tr>
+<td>o,    O</td>
+<td>进入插入模式（Insert    mode）： 这是英文字母    o    的大小写。o 为“在目前光标所在的下一列处插 入新的一列”；    O    为在目前光标所 在处的上一列插入新的一列！（常 用）</td>
+</tr>
+<tr>
+<td>r,    R</td>
+<td>进入取代模式（Replace mode）：r    只会取代光标所在的 那一个字符一次；R会一直取代光 标所在的文字，直到按下    ESC    为 止；（常用）</td>
+</tr>
+<tr>
+<td>[Esc]</td>
+<td>退出编辑模式，回到一般指令模式 中（常用）</td>
+</tr>
+</tbody></table>
+<h1 id="command-line-mode"><a href="#command-line-mode" class="headerlink" title="command-line mode"></a>command-line mode</h1><table>
+<thead>
+<tr>
+<th>命令行界面的储存、离开等 指令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>:w</td>
+<td>将编辑的数据写入硬盘文件中（常用）</td>
+</tr>
+<tr>
+<td>:w!</td>
+<td>若文件属性为“只读”时，强制写入该文件。不过，到底能 不能写入，还是跟你对该文件的文件权限有关啊！</td>
+</tr>
+<tr>
+<td>:q</td>
+<td>离开    vi    （常用） :q! 若曾修改过文件，又不想储存，使用    !    为强制离开不储存 盘案。注意一下啊，那个惊叹号 （!）    在    vi    当中，常常具 有“强制”的意思～</td>
+</tr>
+<tr>
+<td>:wq</td>
+<td>储存后离开，若为    :wq!    则为强制储存后离开    （常用） ZZ 这是大写的    Z    喔！若文件没有更动，则不储存离开，若 文件已经被更动过，则储存后离开！ :w    [filename] 将编辑的数据储存成另一个文件（类似另存新文件） :r    [filename] 在编辑的数据中，读入另一个文件的数据。亦即将 “filename”    这个文件内容加到光标所在列后面 :n1,n2    w    [filename] 将    n1    到    n2    的内容储存成    filename    这个文件。</td>
+</tr>
+<tr>
+<td>:!    command</td>
+<td>暂时离开    vi    到命令行界面下执行    command    的显示结 果！例如    “:!    ls    /home”即可在    vi    当中察看    /home    下面以 ls    输出的文件信息！</td>
+</tr>
+</tbody></table>
+<hr>
+<table>
+<thead>
+<tr>
+<th>vim    环境的变更</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>:set nu</td>
+<td>显示行号，设置之后，会在每一列的字首显示该列的行 号</td>
+</tr>
+<tr>
+<td>:set nonu</td>
+<td>与set nu相反，为取消行号！</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>vim</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>virtulbox/vmware 网卡桥接问题</title>
+    <url>/2018/10/16/virtulbox-vmware-%E7%BD%91%E5%8D%A1%E6%A1%A5%E6%8E%A5%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h1 id="virtulbox-和-vmware-同时安装-桥接网卡失败"><a href="#virtulbox-和-vmware-同时安装-桥接网卡失败" class="headerlink" title="virtulbox 和 vmware 同时安装 桥接网卡失败"></a>virtulbox 和 vmware 同时安装 桥接网卡失败</h1><p><strong>原因 ：两者同时安装的时候 vmware桥接的时候会自动选择网卡，导致桥接失败</strong></p>
+<h2 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h2><a id="more"></a>
+<ol>
+<li>首先打开虚拟网络编辑器<br><img src="https://img.6exe.xyz/uploads/big/dd76b66b0b57980cba0d953bc7436436.png"></li>
+<li>更改设置<br><img src="https://img.6exe.xyz/uploads/big/42773b6852a2b89f9afb5daca33ad440.png"></li>
+<li>找到桥接网卡 改为真是机器的网卡<br><img src="https://img.6exe.xyz/uploads/big/0778e647ce8ccabdc1dcf3d78549d85d.png"></li>
+</ol>
+]]></content>
+      <categories>
+        <category>virtulbox/vmware</category>
+      </categories>
+      <tags>
+        <tag>virtulbox</tag>
+        <tag>vmware</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>zsh 配置并美化</title>
+    <url>/2019/01/20/zsh-%E9%85%8D%E7%BD%AE%E5%B9%B6%E7%BE%8E%E5%8C%96/</url>
+    <content><![CDATA[<h1 id="安装zsh"><a href="#安装zsh" class="headerlink" title="安装zsh"></a>安装<code>zsh</code></h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Arch Linux</span></span><br><span class="line">pacman -S zsh </span><br><span class="line"></span><br><span class="line"><span class="comment"># 更换用户shell</span></span><br><span class="line">chsh -s /bin/zsh</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+
+<h1 id="安装oh-my-zsh"><a href="#安装oh-my-zsh" class="headerlink" title="安装oh-my-zsh"></a>安装<code>oh-my-zsh</code></h1><p><a href="https://github.com/robbyrussell/oh-my-zsh">oh-my-zsh github</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 官网安装方法</span></span><br><span class="line">sh -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+<p><strong>注意</strong><br>众所周知的原因，某些时候我们访问不了。<code>raw</code> 的github 网址，这个时候我们，可以自己手动访问<code>raw</code> 保存为 <code>install.sh</code> 赋予权限并运行，此方法适合，能坐小xx，但是linux无法访问的同学。</p>
+<h1 id="配置插件-zshrc"><a href="#配置插件-zshrc" class="headerlink" title="配置插件 .zshrc"></a>配置插件 <code>.zshrc</code></h1><p>所有文件都在 <code>.zshrc</code> 中配置<br>安装 <code> zsh-syntax-highlighting</code> 语法高亮，正确命令显示绿色，错误命令显示红色</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/zsh-users/zsh-syntax-highlighting.git <span class="variable">$&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;</span>/plugins/zsh-syntax-highlighting</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><a href="https://github.com/zsh-users/zsh-syntax-highlighting">github 主页</a></p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 主要插件 ，最后一个必须安装</span></span><br><span class="line">plugins=(</span><br><span class="line">  git</span><br><span class="line">  sudo</span><br><span class="line">  z</span><br><span class="line">  pip</span><br><span class="line">  zsh-syntax-highlighting</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h1 id="使-zshrc-生效"><a href="#使-zshrc-生效" class="headerlink" title="使 .zshrc  生效"></a>使 <code>.zshrc</code>  生效</h1><p>最后使 <code>zshrc</code> 生效</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">source</span> .zshrc</span><br></pre></td></tr></table></figure>
+<hr>
+<blockquote>
+<p>参考博客及文档<br><a href="https://mtaoist.xyz/2018/03/14/oh-my-zsh/">taoist 博客</a><br><a href="https://github.com/zsh-users/zsh-syntax-highlighting">zsh-syntax-highlighting</a><br><a href="https://github.com/robbyrussell/oh-my-zsh">oh-my-zsh</a></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>zsh</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用docker-compose搭建lychee图床</title>
+    <url>/2019/08/10/%E4%BD%BF%E7%94%A8docker-compose%E6%90%AD%E5%BB%BAlychee%E5%9B%BE%E5%BA%8A/</url>
+    <content><![CDATA[<h1 id="lychee-图床是什么？"><a href="#lychee-图床是什么？" class="headerlink" title="lychee 图床是什么？"></a>lychee 图床是什么？</h1><blockquote>
+<p>A great looking and easy-to-use photo-management-system.  </p>
+</blockquote>
+<p><a href="https://github.com/LycheeOrg/Lychee">Lychee-Github 地址</a></p>
+<a id="more"></a>
+
+<h1 id="docker-搭建-lychee-图床"><a href="#docker-搭建-lychee-图床" class="headerlink" title="docker 搭建  lychee 图床"></a>docker 搭建  lychee 图床</h1><p>本次搭建环境如下:</p>
+<ul>
+<li>docker</li>
+<li>docker-compose</li>
+<li>mysql:5.7</li>
+<li>caddy</li>
+<li>linuxserver/lychee</li>
+</ul>
+<p>说明：<br>linuxserver/lychee ：是一个开源的组织build好的 lychee 图床的本体<br>mysql：用于存储数据<br>caddy：用于反向代理并且自动部署Https证书</p>
+<p>开始搭建：<br>首先，我们需要把caddyfile创建好，因为高版本的docker如果映射文件的时候，没有该文件会报错。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建 /docker 目录用于保存数据，可以自定义</span></span><br><span class="line">mkdir  /docker</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建 Caddyfile</span></span><br><span class="line">https://your-domain &#123;</span><br><span class="line"> gzip</span><br><span class="line"> tls admin@your-email-address </span><br><span class="line"> proxy / http://172.20.0.3 <span class="comment"># lychee容器的ip地址</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="使用docker-compose-搭建-lychee"><a href="#使用docker-compose-搭建-lychee" class="headerlink" title="使用docker-compose 搭建 lychee"></a>使用docker-compose 搭建 lychee</h1><p>把以下文件保存到合适的文件夹下，比如</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="variable">$HOME</span>/docker/lychee</span><br><span class="line"><span class="comment"># 保存配置文件为</span></span><br><span class="line">docker-compose.yaml</span><br></pre></td></tr></table></figure>
+<p><strong>docker-compose 文件及解释 （注意修改数据库密码）</strong></p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&quot;2&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">lychee:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">linuxserver/lychee</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">lychee</span></span><br><span class="line">    <span class="attr">depends_on:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">db</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">caddy</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">PUID=1000</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">PGID=1000</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">TZ=Asia/Shanghai</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">/docker/lychee/appdata/config:/config</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">/docker/lychee/pictures:/pictures</span></span><br><span class="line">    <span class="attr">networks:</span></span><br><span class="line">      <span class="comment"># 固定lychee的容器ip</span></span><br><span class="line">      <span class="attr">mysql-net:</span></span><br><span class="line">        <span class="attr">ipv4_address:</span> <span class="number">172.16</span><span class="number">.0</span><span class="number">.3</span></span><br><span class="line">      <span class="attr">caddy-net:</span></span><br><span class="line">        <span class="attr">ipv4_address:</span> <span class="number">172.20</span><span class="number">.0</span><span class="number">.3</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">unless-stopped</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">db:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">mysql:5.7</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">mysql-lychee</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="attr">MYSQL_ROOT_PASSWORD:</span> <span class="string">一定要修改password</span></span><br><span class="line">      <span class="attr">MYSQL_DATABASE:</span> <span class="string">lychee</span></span><br><span class="line">      <span class="attr">MYSQL_USER:</span> <span class="string">lychee</span></span><br><span class="line">      <span class="attr">MYSQL_PASSWORD:</span> <span class="string">一定要修改password</span></span><br><span class="line">    <span class="attr">networks:</span></span><br><span class="line">      <span class="attr">mysql-net:</span></span><br><span class="line">        <span class="comment"># 固定数据库ip地址，方便以后迁移</span></span><br><span class="line">        <span class="attr">ipv4_address:</span> <span class="number">172.16</span><span class="number">.0</span><span class="number">.2</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">/docker/mysql_5.7:/var/lib/mysql</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">unless-stopped</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># caddy 反向代理开启https</span></span><br><span class="line">  <span class="attr">caddy:</span></span><br><span class="line">      <span class="attr">image:</span> <span class="string">abiosoft/caddy:latest</span></span><br><span class="line">      <span class="attr">container_name:</span> <span class="string">caddy-https</span></span><br><span class="line">      <span class="attr">environment:</span></span><br><span class="line">        <span class="comment"># 这里代表自动申请证书</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">ACME_AGREE=true</span></span><br><span class="line">      <span class="attr">ports:</span></span><br><span class="line">        <span class="comment"># 注意: 这个镜像开启了80 443 2015 端口</span></span><br><span class="line">        <span class="comment"># 注意：这里映射的是宿主机80 和 443 端口</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">&quot;80:80&quot;</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">&quot;443:443&quot;</span></span><br><span class="line">      <span class="attr">networks:</span></span><br><span class="line">        <span class="attr">caddy-net:</span></span><br><span class="line">          <span class="attr">ipv4_address:</span> <span class="number">172.20</span><span class="number">.0</span><span class="number">.2</span></span><br><span class="line"></span><br><span class="line">      <span class="attr">volumes:</span></span><br><span class="line">        <span class="comment"># 配置映射 / 证书映射</span></span><br><span class="line">        <span class="comment"># 挂载文件之前，该文件必须存在，否则报错误</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">/docker/caddy/Caddyfile:/etc/Caddyfile</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">/docker/caddy/.caddy/:/root/.caddy</span></span><br><span class="line">        <span class="comment"># 这里是web的目录</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">/docker/caddy/srv:/srv</span></span><br><span class="line">      <span class="attr">restart:</span> <span class="string">unless-stopped</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建隔离的网络环境</span></span><br><span class="line"><span class="attr">networks:</span></span><br><span class="line"><span class="comment"># mysql-net </span></span><br><span class="line">  <span class="attr">mysql-net:</span></span><br><span class="line">    <span class="attr">ipam:</span></span><br><span class="line">      <span class="attr">config:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">subnet:</span> <span class="number">172.16</span><span class="number">.0</span><span class="number">.0</span><span class="string">/24</span></span><br><span class="line">          <span class="attr">gateway:</span> <span class="number">172.16</span><span class="number">.0</span><span class="number">.1</span></span><br><span class="line"><span class="comment"># caddy-net</span></span><br><span class="line">  <span class="attr">caddy-net:</span></span><br><span class="line">    <span class="attr">ipam:</span></span><br><span class="line">      <span class="attr">config:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">subnet:</span> <span class="number">172.20</span><span class="number">.0</span><span class="number">.0</span><span class="string">/24</span></span><br><span class="line">          <span class="attr">gateway:</span> <span class="number">172.20</span><span class="number">.0</span><span class="number">.1</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>起服务</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker-compose up -d</span><br></pre></td></tr></table></figure>
+
+
+
+<p>说明：<br>Q：为什么要固定容器ip？<br>A：我为了迁移的时候方便，因为lychee起来后会写入配置文件的ip地址，迁移的时候ip可能会变</p>
+<p>Q：为什么使用两个网段？<br>A：为了隔离容器的网络，看起来这样更安全，并且其他容器要和caddy和mysql连接的时候只需要加入对应网络即可。</p>
+<hr>
+<h1 id="服务起来之后…"><a href="#服务起来之后…" class="headerlink" title="服务起来之后…"></a>服务起来之后…</h1><p>根据提示，填入相应的信息，愉快的使用吧！</p>
+<p>搭建好的图床展示<br><img src="https://img.6exe.xyz/uploads/big/4339e70f5c48e009ec820701592ff457.png"></p>
+]]></content>
+      <categories>
+        <category>docker</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用docker搭建kms激活服务器</title>
+    <url>/2019/11/03/%E4%BD%BF%E7%94%A8docker%E6%90%AD%E5%BB%BAkms%E6%BF%80%E6%B4%BB%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
+    <content><![CDATA[<h1 id="KMS-是什么？"><a href="#KMS-是什么？" class="headerlink" title="KMS 是什么？"></a>KMS 是什么？</h1><p>KMS 是微软为了批量激活而设计的一种Windows 的激活方式，主要用于企业批量激活。</p>
+<h1 id="使用-docker-compose-一键部署-KMS激活服务器"><a href="#使用-docker-compose-一键部署-KMS激活服务器" class="headerlink" title="使用 docker-compose 一键部署 KMS激活服务器"></a>使用 docker-compose 一键部署 KMS激活服务器</h1><p>我自己写的docker-compose 仓库（kms server 程序是vlmcsd）<br><a href="https://github.com/kissme666/Dockerfile/tree/master/vlmcsd">https://github.com/kissme666/Dockerfile/tree/master/vlmcsd</a></p>
+<p><strong>注意：有的机器防火墙需要放行Docker映射的1688端口</strong></p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&quot;3&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">vlmcsd:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">evildocker/kms</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&quot;1688:1688&quot;</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>想研究一下 Dockerfile的请查看如下仓库<br><a href="https://hub.docker.com/r/evildocker/kms">https://hub.docker.com/r/evildocker/kms</a></p>
+<p><img src="https://img.6exe.xyz/uploads/big/9168226b527ea7bb7038767a44790b89.png"></p>
+<h1 id="绑定域名-非必须，直接使用ip也可以"><a href="#绑定域名-非必须，直接使用ip也可以" class="headerlink" title="绑定域名 (非必须，直接使用ip也可以)"></a>绑定域名 (非必须，直接使用ip也可以)</h1><p>去你的域名服务商添加A记录 kms.yourdomain.com ，然后测试</p>
+<ul>
+<li>测试是否搭建成功</li>
+<li>*测试非必须，毕竟直接激活，能激活那就搭建成功了呗**</li>
+</ul>
+<p>首先下载 <a href="https://github.com/Wind4/vlmcsd/releases">vlmcsd</a><br> <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"> <span class="comment"># 输出有successful即搭建成功</span></span><br><span class="line">./vlmcs-Windows-x64.exe -v -l 3 your kms server domain or ip</span><br></pre></td></tr></table></figure><br><img src="https://img.6exe.xyz/uploads/big/5849dbbba7afc64ffdbaf1cf27ebb7d5.png"></p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>docker</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用firewall-cmd 进行流量中转</title>
+    <url>/2019/11/03/%E4%BD%BF%E7%94%A8firewall-cmd-%E8%BF%9B%E8%A1%8C%E6%B5%81%E9%87%8F%E4%B8%AD%E8%BD%AC/</url>
+    <content><![CDATA[<p><img src="https://img.6exe.xyz/uploads/big/8b36786d5209e185f5ef66fb909360ec.gif"></p>
+<h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><p>最近在看firewall-cmd 方面的知识，所以这篇文章算的上一个小的实验，练习以下自己学的东西，没什么技术含量(我是菜鸡…)。</p>
+<h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Os: centos7</span><br><span class="line">soft: firewall-cmd </span><br><span class="line">user: root</span><br><span class="line">vmware15 centos7（实际上可以替换为国内中转机器）</span><br></pre></td></tr></table></figure>
+<h1 id="开始吧"><a href="#开始吧" class="headerlink" title="开始吧"></a>开始吧</h1><p>准备工作:<br>一般来说，我们的Centos7 都会默认安装 firewall-cmd ，下列命令查看是否安装</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">firewall-cmd --version</span><br><span class="line"># 0.6.3</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+
+<p>咩有返回版本信息，说明咩有安装，我们安装即可(这个是命令行版本的firewall )</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yum install firewalld -y</span><br></pre></td></tr></table></figure>
+<h1 id="开启防火墙"><a href="#开启防火墙" class="headerlink" title="开启防火墙"></a>开启防火墙</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">systemctl status firewalld.service </span><br><span class="line"># 返回信息中有 active 表明firewall 已运行，如果没有，请看接下来的操作</span><br><span class="line">Active: active (running) since Mon 2019-10-14 16:48:34 CST; 6h ago</span><br><span class="line"></span><br><span class="line"># 开机启动防火墙</span><br><span class="line">systemctl enable firewalld</span><br><span class="line"></span><br><span class="line"># 开启防火墙</span><br><span class="line"># 默认开了ssh的服务，不用担心 firewall会阻断ssh连接</span><br><span class="line">systemctl start firewalld</span><br><span class="line">开启流量转发</span><br><span class="line"># firewall 的默认区域是 public，可以查看firewall的激活区域</span><br><span class="line">firewall-cmd --get-active-zones </span><br><span class="line">public</span><br><span class="line">  interfaces: ens33</span><br></pre></td></tr></table></figure>
+
+<h1 id="开启ip伪装，名字好怪"><a href="#开启ip伪装，名字好怪" class="headerlink" title="开启ip伪装，名字好怪"></a>开启ip伪装，名字好怪</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">firewall-cmd --permanent --zone&#x3D;public --add-masquerade </span><br><span class="line"># success</span><br></pre></td></tr></table></figure>
+
+<h1 id="开启流量转发"><a href="#开启流量转发" class="headerlink" title="开启流量转发"></a>开启流量转发</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">firewall-cmd --permanent --zone&#x3D;public --add-forward-port&#x3D;port&#x3D;22:proto&#x3D;tcp:toport&#x3D;1080:toaddr&#x3D;1.1.1.1</span><br><span class="line">success</span><br><span class="line"># 注意替换为自己的配置</span><br><span class="line"># port: 代表你国内的机器的port</span><br><span class="line"># proto: 代表你要转发的协议，一般都是tcp</span><br><span class="line"># toport: 代表你要连接的国外vps</span><br><span class="line"># toaddr: 代表你vps的ip</span><br><span class="line"># --permanent 为永久配置，必须加上</span><br></pre></td></tr></table></figure>
+
+<h1 id="彻底重启fireall，让我们的设置生效"><a href="#彻底重启fireall，让我们的设置生效" class="headerlink" title="彻底重启fireall，让我们的设置生效"></a>彻底重启fireall，让我们的设置生效</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">firewall-cmd --complete-reload </span><br><span class="line"># success</span><br></pre></td></tr></table></figure>
+
+<h1 id="查看我们的配置"><a href="#查看我们的配置" class="headerlink" title="查看我们的配置"></a>查看我们的配置</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">firewall-cmd --list-all</span><br><span class="line">public (active)</span><br><span class="line">  target: default</span><br><span class="line">  icmp-block-inversion: no</span><br><span class="line">  interfaces: ens33</span><br><span class="line">  sources: </span><br><span class="line">  services: dhcpv6-client ssh</span><br><span class="line">  ports: </span><br><span class="line">  protocols: </span><br><span class="line">  masquerade: yes</span><br><span class="line">  forward-ports: port&#x3D;22:proto&#x3D;tcp:toport&#x3D;1080:toaddr&#x3D;1.1.1.1 # 可以看到这里已经生效了</span><br><span class="line">  source-ports: </span><br><span class="line">  icmp-blocks: </span><br><span class="line">  rich rules:</span><br></pre></td></tr></table></figure>
+<h1 id="配置本地的科学服务端"><a href="#配置本地的科学服务端" class="headerlink" title="配置本地的科学服务端"></a>配置本地的科学服务端</h1><p>只需要把原来的vps的ip替换为国内服务器的ip，并且端口设置为我们国内服务器的端口即可。</p>
+<p>多说一句，像阿里云这种，我们还需要在控制面版放行我们刚才设置的国内服务器的端口</p>
+<p><img src="https://img.6exe.xyz/uploads/big/071249d4d5463dc43c1a153bc25323dc.png"></p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>firewall</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>懒，迷茫</title>
+    <url>/2018/09/12/%E6%87%92/</url>
+    <content><![CDATA[<p>我发现我现在是真的懒+迷茫，对未来感到害怕！</p>
+]]></content>
+      <categories>
+        <category>me</category>
+      </categories>
+      <tags>
+        <tag>me</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博客第一篇</title>
+    <url>/2018/07/18/%E5%8D%9A%E5%AE%A2%E7%AC%AC%E4%B8%80%E7%AF%87/</url>
+    <content><![CDATA[<p>博客开开关关，最终选择github托管，以后好好写博客！</p>
+]]></content>
+      <categories>
+        <category>others</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>终端代理之proxychains-ng</title>
+    <url>/2018/10/18/%E7%BB%88%E7%AB%AF%E4%BB%A3%E7%90%86%E4%B9%8Bproxychains-ng/</url>
+    <content><![CDATA[<h1 id="proxychains-ng"><a href="#proxychains-ng" class="headerlink" title="proxychains-ng"></a>proxychains-ng</h1><h2 id="proxychains文档及源码"><a href="#proxychains文档及源码" class="headerlink" title="proxychains文档及源码"></a>proxychains文档及源码</h2><p><a href="https://github.com/rofl0r/proxychains-ng">proxychains-github</a></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install proxychains4</span><br></pre></td></tr></table></figure>
+
+<h2 id="配置代理"><a href="#配置代理" class="headerlink" title="配置代理"></a>配置代理</h2><a id="more"></a>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo vim /etc/proxychains4.conf</span><br><span class="line"></span><br><span class="line"><span class="comment"># 找到 [ProxycList] 添加</span></span><br><span class="line">socks5 127.0.0.1 你的小飞机端口</span><br></pre></td></tr></table></figure>
+<p><img src="https://img.6exe.xyz/uploads/big/f880c51b747add5715a3fe3cee94cf2f.png"></p>
+<h2 id="设置别名"><a href="#设置别名" class="headerlink" title="设置别名"></a>设置别名</h2><p><strong>因为我使用了zsh 所以我们修改 ~/.zshrc 而不是 ~/.bashrc</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 更新配置</span></span><br><span class="line"><span class="built_in">source</span> .zshrc</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img.6exe.xyz/uploads/big/a17c6371d5b8c9b8c884458b220cbdf1.png"></p>
+<h2 id="关于sudo"><a href="#关于sudo" class="headerlink" title="关于sudo"></a>关于sudo</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 这样会提示命令未找到</span></span><br><span class="line">sudo apt-get update </span><br><span class="line"></span><br><span class="line"><span class="comment"># 改为这样执行</span></span><br><span class="line">pc sudo apt-get update</span><br></pre></td></tr></table></figure>
+
+<h2 id="如何配置酸酸"><a href="#如何配置酸酸" class="headerlink" title="如何配置酸酸"></a>如何配置酸酸</h2><blockquote>
+<p><a href="https://wiki.archlinux.org/index.php/Shadowsocks_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87">archwiki</a></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>proxy</category>
+      </categories>
+      <tags>
+        <tag>proxy</tag>
+      </tags>
+  </entry>
+</search>

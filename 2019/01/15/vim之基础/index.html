@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.1.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":"enable","trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="vim 基础vim 分为   一般指令模式 (command mode)vim test.txt 刚刚打开时候为这个模式 插入模式 (insert mode)当按下 i&#x2F;o&#x2F;a 等等时，为插入模式 命令行命令模式 (command-line mode)按下 : ? &#x2F; 等进入command-line mode 模式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vim之基础">
+<meta property="og:url" content="http://yoursite.com/2019/01/15/vim%E4%B9%8B%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="vim 基础vim 分为   一般指令模式 (command mode)vim test.txt 刚刚打开时候为这个模式 插入模式 (insert mode)当按下 i&#x2F;o&#x2F;a 等等时，为插入模式 命令行命令模式 (command-line mode)按下 : ? &#x2F; 等进入command-line mode 模式">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-01-15T11:51:54.000Z">
+<meta property="article:modified_time" content="2019-07-04T15:01:42.096Z">
+<meta property="article:author" content="Evil">
+<meta property="article:tag" content="vim">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2019/01/15/vim%E4%B9%8B%E5%9F%BA%E7%A1%80/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>vim之基础 | Hexo</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hexo</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/15/vim%E4%B9%8B%E5%9F%BA%E7%A1%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Evil">
+      <meta itemprop="description" content="爱这个世界！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          vim之基础
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-01-15 19:51:54" itemprop="dateCreated datePublished" datetime="2019-01-15T19:51:54+08:00">2019-01-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-07-04 23:01:42" itemprop="dateModified" datetime="2019-07-04T23:01:42+08:00">2019-07-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="vim-基础"><a href="#vim-基础" class="headerlink" title="vim 基础"></a>vim 基础</h1><p>vim 分为 </p>
+<ul>
+<li>一般指令模式 (command mode)<br>vim test.txt 刚刚打开时候为这个模式</li>
+<li>插入模式 (insert mode)<br>当按下 i/o/a 等等时，为插入模式</li>
+<li>命令行命令模式 (command-line mode)<br>按下 : ? / 等进入command-line mode 模式</li>
+</ul>
+<hr>
+<a id="more"></a>
+
+<h1 id="command-mode"><a href="#command-mode" class="headerlink" title="command  mode"></a>command  mode</h1><p><strong>主要记录快捷键</strong><br>第一部份：一般指令模式可用的按钮说明，光标移动、复制贴上、搜寻取代等</p>
+<table>
+<thead>
+<tr>
+<th>移动光标的方法</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>h    或    向左方向键（←）</td>
+<td>光标向左移动一个字符</td>
+</tr>
+<tr>
+<td>j    或    向下方向键（↓）</td>
+<td>光标向下移动一个字符</td>
+</tr>
+<tr>
+<td>k    或    向上方向键（↑）</td>
+<td>光标向上移动一个字符</td>
+</tr>
+<tr>
+<td>l    或    向右方向键（→）</td>
+<td>光标向右移动一个字符</td>
+</tr>
+<tr>
+<td>0    或功能键[Home]</td>
+<td>这是数字“0”：移动到这一列的最前面字符处 （常用）</td>
+</tr>
+<tr>
+<td>$    或功能键[End]</td>
+<td>移动到这一列的最后面字符处（常用）</td>
+</tr>
+<tr>
+<td>G</td>
+<td>移动到这个文件的最后一列（常用）</td>
+</tr>
+<tr>
+<td>gg</td>
+<td>移动到这个文件的第一列，相当于1G啊！（常用）</td>
+</tr>
+<tr>
+<td>n<Enter></td>
+<td>n为数字。光标向下移动n列（常用）</td>
+</tr>
+<tr>
+<td>nG</td>
+<td>n为数字。移动到这个文件的第n列。例如20G则会移动到这个文件的第20列（可配合 :set    nu）</td>
+</tr>
+<tr>
+<td>搜寻与取代</td>
+<td></td>
+</tr>
+<tr>
+<td>/word</td>
+<td>向光标之下寻找一个名称为word的字串。例如要在文件内搜寻vbird这个字串，就输入 /vbird    即可！（常用）</td>
+</tr>
+<tr>
+<td>?word</td>
+<td>向光标之上寻找一个字串名称为word的字 串。</td>
+</tr>
+<tr>
+<td>n</td>
+<td>这个n是英文按键。代表“<u>重复前一个搜 寻的动作</u>”。举例来说，    如果刚刚我们执 行/vbird    去向下搜寻vbird这个字串,则按下 n    后，会向下继续搜寻下一个名称为    vbird    的 字串。如果是执行    ?vbird    的话，那么按下n 则会向上继续搜寻名称为bird的字串！</td>
+</tr>
+<tr>
+<td>N</td>
+<td>这个N是英文按键。与n刚好相反，为“反 向”进行前一个搜寻动作。例如/vbird后，按下N则表示“向上”搜寻vbird    。</td>
+</tr>
+<tr>
+<td>:n1,n2s/word1/word2/g</td>
+<td>n1    与    n2    为数字。在第    n1    与    n2    列之间寻找 word1    这个字串，并将该字串取代为    word2 ！举例来说，在    100    到    200    列之间搜寻    vbird 并取代为    VBIRD 则：“:100,200s/vbird/VBIRD/g”。（常用）</td>
+</tr>
+<tr>
+<td>:1,$s/word1/word2/g</td>
+<td>从第一列到最后一列寻找    word1    字串，并将 该字串取代为    word2    ！（常用）</td>
+</tr>
+<tr>
+<td>:1,$s/word1/word2/gc</td>
+<td>从第一列到最后一列寻找    word1    字串，并将 该字串取代为    word2    ！且在取代前显示提示 字符给使用者确认    （confirm）    是否需要取 代！（常用）</td>
+</tr>
+</tbody></table>
+<hr>
+<table>
+<thead>
+<tr>
+<th>删除、复制与贴上</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>x,    X</td>
+<td>在一列字当中，x    为向后删除一个字符    （相 当于    [del]    按键），    X    为向前删除一个字符 （相当于    [baackspace]    亦即是倒退键）    （常 用）</td>
+</tr>
+<tr>
+<td>dd</td>
+<td>删除光标所在的那一整列（常用）</td>
+</tr>
+<tr>
+<td>ndd</td>
+<td>n    为数字。删除光标所在的向下    n    列，例如 20dd    则是删除    20    列    （常用）</td>
+</tr>
+<tr>
+<td>yy</td>
+<td>复制光标所在的那一列（常用）</td>
+</tr>
+<tr>
+<td>nyy</td>
+<td>n    为数字。复制光标所在的向下    n    列，例如 20yy    则是复制    20    列（常用）</td>
+</tr>
+<tr>
+<td>p,    P</td>
+<td>p    为将已复制的数据在光标下一列贴上，P    则 为贴在光标上一列！    举例来说，我目前光标 在第    20    列，且已经复制了    10    列数据。则按 下    p    后，    那    10    列数据会贴在原本的    20    列之 后，亦即由    21    列开始贴。但如果是按下    P 呢？    那么原本的第    20    列会被推到变成    30 列。    （常用）</td>
+</tr>
+<tr>
+<td>u</td>
+<td>复原前一个动作。（常用）</td>
+</tr>
+<tr>
+<td>.</td>
+<td>不要怀疑！这就是小数点！意思是重复前一 个动作的意思。    如果你想要重复删除、重复 贴上等等动作，按下小数点“.”就好了！    （常 用）</td>
+</tr>
+</tbody></table>
+<hr>
+<p>一般指令模式切换到编辑模式的可用的按钮说明</p>
+<h1 id="insert-mode"><a href="#insert-mode" class="headerlink" title="insert mode"></a>insert mode</h1><table>
+<thead>
+<tr>
+<th>进入插入或取代的编辑模式</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>i,    I</td>
+<td>进入插入模式（Insert    mode）：i 为“从目前光标所在处插入”，    I 为“在目前所在列的第一个非空白 字符处开始插入”。    （常用）</td>
+</tr>
+<tr>
+<td>a,    A</td>
+<td>进入插入模式（Insert    mode）：a 为“从目前光标所在的下一个字符 处开始插入”，    A    为“从光标所在列 的最后一个字符处开始插入”。 （常用）</td>
+</tr>
+<tr>
+<td>o,    O</td>
+<td>进入插入模式（Insert    mode）： 这是英文字母    o    的大小写。o 为“在目前光标所在的下一列处插 入新的一列”；    O    为在目前光标所 在处的上一列插入新的一列！（常 用）</td>
+</tr>
+<tr>
+<td>r,    R</td>
+<td>进入取代模式（Replace mode）：r    只会取代光标所在的 那一个字符一次；R会一直取代光 标所在的文字，直到按下    ESC    为 止；（常用）</td>
+</tr>
+<tr>
+<td>[Esc]</td>
+<td>退出编辑模式，回到一般指令模式 中（常用）</td>
+</tr>
+</tbody></table>
+<h1 id="command-line-mode"><a href="#command-line-mode" class="headerlink" title="command-line mode"></a>command-line mode</h1><table>
+<thead>
+<tr>
+<th>命令行界面的储存、离开等 指令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>:w</td>
+<td>将编辑的数据写入硬盘文件中（常用）</td>
+</tr>
+<tr>
+<td>:w!</td>
+<td>若文件属性为“只读”时，强制写入该文件。不过，到底能 不能写入，还是跟你对该文件的文件权限有关啊！</td>
+</tr>
+<tr>
+<td>:q</td>
+<td>离开    vi    （常用） :q! 若曾修改过文件，又不想储存，使用    !    为强制离开不储存 盘案。注意一下啊，那个惊叹号 （!）    在    vi    当中，常常具 有“强制”的意思～</td>
+</tr>
+<tr>
+<td>:wq</td>
+<td>储存后离开，若为    :wq!    则为强制储存后离开    （常用） ZZ 这是大写的    Z    喔！若文件没有更动，则不储存离开，若 文件已经被更动过，则储存后离开！ :w    [filename] 将编辑的数据储存成另一个文件（类似另存新文件） :r    [filename] 在编辑的数据中，读入另一个文件的数据。亦即将 “filename”    这个文件内容加到光标所在列后面 :n1,n2    w    [filename] 将    n1    到    n2    的内容储存成    filename    这个文件。</td>
+</tr>
+<tr>
+<td>:!    command</td>
+<td>暂时离开    vi    到命令行界面下执行    command    的显示结 果！例如    “:!    ls    /home”即可在    vi    当中察看    /home    下面以 ls    输出的文件信息！</td>
+</tr>
+</tbody></table>
+<hr>
+<table>
+<thead>
+<tr>
+<th>vim    环境的变更</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>:set nu</td>
+<td>显示行号，设置之后，会在每一列的字首显示该列的行 号</td>
+</tr>
+<tr>
+<td>:set nonu</td>
+<td>与set nu相反，为取消行号！</td>
+</tr>
+</tbody></table>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/vim/" rel="tag"># vim</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/01/12/hexo-blog-%E8%BF%81%E7%A7%BB%E7%AC%94%E8%AE%B0/" rel="prev" title="hexo blog 迁移笔记">
+      <i class="fa fa-chevron-left"></i> hexo blog 迁移笔记
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/01/20/zsh-%E9%85%8D%E7%BD%AE%E5%B9%B6%E7%BE%8E%E5%8C%96/" rel="next" title="zsh 配置并美化">
+      zsh 配置并美化 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#vim-%E5%9F%BA%E7%A1%80"><span class="nav-number">1.</span> <span class="nav-text">vim 基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#command-mode"><span class="nav-number">2.</span> <span class="nav-text">command  mode</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#insert-mode"><span class="nav-number">3.</span> <span class="nav-text">insert mode</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#command-line-mode"><span class="nav-number">4.</span> <span class="nav-text">command-line mode</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Evil"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Evil</p>
+  <div class="site-description" itemprop="description">爱这个世界！</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/kissme666" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;kissme666" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Evil</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
