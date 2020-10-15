@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Linux双系统删除</title>
+    <url>/2018/09/10/Linux%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%88%A0%E9%99%A4/</url>
+    <content><![CDATA[<h1 id="Linux-双系统的删除其中一个系统"><a href="#Linux-双系统的删除其中一个系统" class="headerlink" title="Linux 双系统的删除其中一个系统"></a>Linux 双系统的删除其中一个系统</h1><hr>
+<h2 id="删除Manajro的grub引导"><a href="#删除Manajro的grub引导" class="headerlink" title="删除Manajro的grub引导"></a>删除Manajro的grub引导</h2><p>网上的教程杂乱，很多还是几年前的教程，本文根据我的实践来删除双系统中Linux</p>
+<p>工具：DiskGenius</p>
+<p><img src="https://img.6exe.xyz/uploads/big/54f13582ce251cd7bf3cac4c1338c316.png"></p>
+<p><img src="https://img.6exe.xyz/uploads/big/60c4f0f0a9b91dd1cf2b67b08c0cf52f.png"></p>
+<hr>
+<h2 id="删除-双系统中Linux-分区"><a href="#删除-双系统中Linux-分区" class="headerlink" title="删除 双系统中Linux 分区"></a>删除 双系统中Linux 分区</h2><p><img src="https://img.6exe.xyz/uploads/big/6aa264799acdbed04ca6c8e22110a84a.png"></p>
+<hr>
+<p><strong>删除之后可能存在原有引导存在快速安装的界面，但是不影响重装Linux window10的引导也不受影响</strong></p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>Arch Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Arch</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Linux下 通配符、元字符和转义字符区别</title>
     <url>/2019/08/11/Linux%E4%B8%8B-%E9%80%9A%E9%85%8D%E7%AC%A6%E3%80%81%E5%85%83%E5%AD%97%E7%AC%A6%E5%92%8C%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6%E5%8C%BA%E5%88%AB/</url>
     <content><![CDATA[<h1 id="通配符（wildcard）"><a href="#通配符（wildcard）" class="headerlink" title="通配符（wildcard）"></a>通配符（wildcard）</h1><ul>
@@ -51,28 +73,6 @@
       </categories>
       <tags>
         <tag>shell 编程</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Linux双系统删除</title>
-    <url>/2018/09/10/Linux%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%88%A0%E9%99%A4/</url>
-    <content><![CDATA[<h1 id="Linux-双系统的删除其中一个系统"><a href="#Linux-双系统的删除其中一个系统" class="headerlink" title="Linux 双系统的删除其中一个系统"></a>Linux 双系统的删除其中一个系统</h1><hr>
-<h2 id="删除Manajro的grub引导"><a href="#删除Manajro的grub引导" class="headerlink" title="删除Manajro的grub引导"></a>删除Manajro的grub引导</h2><p>网上的教程杂乱，很多还是几年前的教程，本文根据我的实践来删除双系统中Linux</p>
-<p>工具：DiskGenius</p>
-<p><img src="https://img.6exe.xyz/uploads/big/54f13582ce251cd7bf3cac4c1338c316.png"></p>
-<p><img src="https://img.6exe.xyz/uploads/big/60c4f0f0a9b91dd1cf2b67b08c0cf52f.png"></p>
-<hr>
-<h2 id="删除-双系统中Linux-分区"><a href="#删除-双系统中Linux-分区" class="headerlink" title="删除 双系统中Linux 分区"></a>删除 双系统中Linux 分区</h2><p><img src="https://img.6exe.xyz/uploads/big/6aa264799acdbed04ca6c8e22110a84a.png"></p>
-<hr>
-<p><strong>删除之后可能存在原有引导存在快速安装的界面，但是不影响重装Linux window10的引导也不受影响</strong></p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-        <category>Arch Linux</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>Arch</tag>
       </tags>
   </entry>
   <entry>
@@ -606,6 +606,13 @@
       <tags>
         <tag>firewall</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>博客恢复更新</title>
+    <url>/2020/10/15/%E5%8D%9A%E5%AE%A2%E6%81%A2%E5%A4%8D%E6%9B%B4%E6%96%B0/</url>
+    <content><![CDATA[<h1 id="Answer"><a href="#Answer" class="headerlink" title="Answer"></a>Answer</h1><p>转眼间从大三到大四，整整八个月都在家上网课。自己也变得有点懒了，从今天起，开始跟新博客。</p>
+<p>加油！祝愿我自己未来一切顺利，心想事成！</p>
+]]></content>
   </entry>
   <entry>
     <title>博客第一篇</title>
